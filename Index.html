@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Liquido Pagable</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h1>Pago Liquido Pagable</h1>
+    <div>
+    <form id="formulario">
+        <label for="ci">CI:</label>
+        <input type="text" id="ci" name="ci" required><br><br>
+        
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        
+        <label for="Nacionalidad">Nacionalidad:</label>
+        <input type="text" id="Nacionalidad" name="Nacionalidad" required><br><br>
+        
+        <label for="NroCuenta">NroCuenta:</label>
+        <input type="text" id="NroCuenta" name="NroCuenta" required><br><br>
+
+        <label for="Puesto">Puesto:</label>
+        <input type="text" id="Puesto" name="Puesto" required><br><br>
+        
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br><br>
+
+    </form>
+    </div>
+
+<div>
+    <form id="formulario2">
+        <label for="HaberBasico">HaberBasico:</label>
+        <input type="text" id="HaberBasico" name="HaberBasico" required><br><br>
+        
+        <label for="BonoAntiguedad">BonoAntiguedad:</label>
+        <input type="text" id="BonoAntiguedad" name="BonoAntiguedad" required><br><br>
+        
+        <label for="OtrosIngresos">OtrosIngresos:</label>
+        <input type="text" id="OtrosIngresos" name="OtrosIngresos" required><br><br>
+        
+        <label for="RcIVA">RcIVA:</label>
+        <input type="text" id="RcIVA" name="RcIVA" required><br><br>
+
+        <label for="GestoraPublica">GestoraPublica:</label>
+        <input type="text" id="GestoraPublica" name="GestoraPublica" required><br><br>
+
+        <label for="OtrosDescuentos">OtrosDescuentos:</label>
+        <input type="text" id="OtrosDescuentos" name="OtrosDescuentos" required><br><br>
+        
+        
+        <button type="button" onclick="calcularsalario()">Calcular Salario</button>
+    </form>
+
+</div>
+    <p id="resultado"></p>
+
+    <button onclick="guardarEnArchivoCSV()">Guardar en Archivo CSV</button>
+    <button onclick="recuperarDesdeCSV()">Recuperar Todos los Registros</button>
+    <button onclick="recuperarPorCI()">Recuperar por CI</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
