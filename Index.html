@@ -1,67 +1,178 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pago Liquido Pagable</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>TERCER PARCIAL</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <h1>Pago Liquido Pagable</h1>
-    <div>
-    <form id="formulario">
-        <label for="ci">CI:</label>
-        <input type="text" id="ci" name="ci" required><br><br>
-        
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required><br><br>
-        
-        <label for="Nacionalidad">Nacionalidad:</label>
-        <input type="text" id="Nacionalidad" name="Nacionalidad" required><br><br>
-        
-        <label for="NroCuenta">NroCuenta:</label>
-        <input type="text" id="NroCuenta" name="NroCuenta" required><br><br>
+    <!-- Encabezado principal del sitio -->
+    <header>
+        <h1>TERCER PARCIAL</h1>
+    </header>
 
-        <label for="Puesto">Puesto:</label>
-        <input type="text" id="Puesto" name="Puesto" required><br><br>
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+          </form>
+          <a href="javascript:sumar();">ejecutar suma</a>
+          <a href="javascript:restar();">ejecutar resta</a>
+          <a href="javascript:multiplicar();">ejecutar multiplicar</a>
+          <a href="javascript:dividir();">ejecutar suma</a>
+          <!-- <center><h2>Ingresa las constantes</h2></center> -->
+          <!-- Formulario para la captura de datos personales -->
+          
+          <select onchange="mostrarContenido()">
+            <option value="sumar()">sumar()</option>
+            <option value="resta">resta</option>
+            <option value="multiplicacion">multiplicacion</option>
+            <option value="divicion">divicion</option>
+            </select>
+            
+            <div id="contenido"></div>
+            
+            <script>
+            function mostrarContenido() {
+            var opcionSeleccionada = document.querySelector('select').value;
+            var contenido = document.querySelector('#contenido');
+            contenido.innerHTML = opcionSeleccionada;
+            alert(opcionSeleccionada.toString());
+            // alert(opcionSeleccionada.valueOf());
+        }
+            </script>
+       
+        </ul>
         
-        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br><br>
+    </nav>
+    <main>
+        <img src="imagen.jpg" align="left" width="500" height="300"/>
+ </main>
+    <!-- Contenido principal -->
+        <section>
+            
+            
+            <main>
+                 
 
-    </form>
-    </div>
-
-<div>
-    <form id="formulario2">
-        <label for="HaberBasico">HaberBasico:</label>
-        <input type="text" id="HaberBasico" name="HaberBasico" required><br><br>
+                </p>
+                <!-- <img src="imagen." /> -->
+                <div class="image-container">
+                </div>
+                <div class="grilla"> <!-- Comienza la cuadrícula de elementos -->
+                    <center><h2>INGRESE DATOS</h2></center>
+                    <!-- Formulario para introducir los números -->
+                    <form id="sumForm">
+                        <!-- Campo de entrada para el primer número -->
+                        <center><input type="number" id="num1"
+                            placeholder="Introduce el primer número" required></center>
+                            <p> 
+                            </p>   
+                        <!-- Campo de entrada para el segundo número -->
+                        <center><input type="number" id="num2"
+                            placeholder="Introduce el segundo número" required></center>
+                        <!-- Botón que llama a la función sumar cuando se hace clic -->
+                        <!-- <button type="button" onclick="sumar()">Sumar</button> -->
+                        <p> 
+                        </p>
+                    </form>
+                    
+                </div> <!-- Termina la cuadrícula de elementos -->
+                <div class="result" id="result"></div><!-- Div que mostrará el resultado de la suma -->
+                <div class="grilla">  
+                    <!-- <a href="index.html">Inicio</a>         -->
+                </div><!-- Retornar a la pagina principal -->
+            </main>
+           
+            <script>
+                // Función que se llama al hacer clic en el botón "Sumar"
+                function sumar() {
+                    // Obtener los valores de los inputs y convertirlos a números  
+                    var num1 = parseFloat(document.getElementById('num1').value);
+                    var num2 = parseFloat(document.getElementById('num2').value);
         
-        <label for="BonoAntiguedad">BonoAntiguedad:</label>
-        <input type="text" id="BonoAntiguedad" name="BonoAntiguedad" required><br><br>
+                    // Verificar si los valores son números válidos
+                    if (isNaN(num1) || isNaN(num2)) //isNaN es una función global en JavaScript que se utiliza para determinar si un valor es NaN (Not-a-Number).
+                    {
+                        alert('Por favor, introduce números válidos');
+                        return; // Salir de la función si los valores no son válidos
+                    }
         
-        <label for="OtrosIngresos">OtrosIngresos:</label>
-        <input type="text" id="OtrosIngresos" name="OtrosIngresos" required><br><br>
+                    // Calcular la suma de los dos números
+                    var suma = num1 + num2;
         
-        <label for="RcIVA">RcIVA:</label>
-        <input type="text" id="RcIVA" name="RcIVA" required><br><br>
+                    // Mostrar el resultado en el div con id "result"
+                    document.getElementById('result').textContent = 'Resultado: ' + suma;
+                }
 
-        <label for="GestoraPublica">GestoraPublica:</label>
-        <input type="text" id="GestoraPublica" name="GestoraPublica" required><br><br>
-
-        <label for="OtrosDescuentos">OtrosDescuentos:</label>
-        <input type="text" id="OtrosDescuentos" name="OtrosDescuentos" required><br><br>
+                function restar() {
+                    // Obtener los valores de los inputs y convertirlos a números  
+                    var num1 = parseFloat(document.getElementById('num1').value);
+                    var num2 = parseFloat(document.getElementById('num2').value);
         
+                    // Verificar si los valores son números válidos
+                    if (isNaN(num1) || isNaN(num2)) //isNaN es una función global en JavaScript que se utiliza para determinar si un valor es NaN (Not-a-Number).
+                    {
+                        alert('Por favor, introduce números válidos');
+                        return; // Salir de la función si los valores no son válidos
+                    }
         
-        <button type="button" onclick="calcularsalario()">Calcular Salario</button>
-    </form>
+                    // Calcular la suma de los dos números
+                    var suma = num1 - num2;
+        
+                    // Mostrar el resultado en el div con id "result"
+                    document.getElementById('result').textContent = 'Resultado: ' + suma;
+                }
+                function multiplicar() {
+                    // Obtener los valores de los inputs y convertirlos a números  
+                    var num1 = parseFloat(document.getElementById('num1').value);
+                    var num2 = parseFloat(document.getElementById('num2').value);
+        
+                    // Verificar si los valores son números válidos
+                    if (isNaN(num1) || isNaN(num2)) //isNaN es una función global en JavaScript que se utiliza para determinar si un valor es NaN (Not-a-Number).
+                    {
+                        alert('Por favor, introduce números válidos');
+                        return; // Salir de la función si los valores no son válidos
+                    }
+        
+                    // Calcular la suma de los dos números
+                    var suma = num1 * num2;
+        
+                    // Mostrar el resultado en el div con id "result"
+                    document.getElementById('result').textContent = 'Resultado: ' + suma;
+                }
+                function dividir() {
+                    // Obtener los valores de los inputs y convertirlos a números  
+                    var num1 = parseFloat(document.getElementById('num1').value);
+                    var num2 = parseFloat(document.getElementById('num2').value);
+        
+                    // Verificar si los valores son números válidos
+                    if (isNaN(num1) || isNaN(num2)) //isNaN es una función global en JavaScript que se utiliza para determinar si un valor es NaN (Not-a-Number).
+                    {
+                        alert('Por favor, introduce números válidos');
+                        return; // Salir de la función si los valores no son válidos
+                    }
+        
+                    // Calcular la suma de los dos números
+                    var suma = num1 / num2;
+        
+                    // Mostrar el resultado en el div con id "result"
+                    document.getElementById('result').textContent = 'Resultado: ' + suma;
+                }
+            </script>
+        </section>
+    
+    <!-- Pie de página -->
+    <footer>
+        
+        <p>Derechos Reservados by Paulo Machicado &copy; 17-08-2024</p>
+    </footer>
 
-</div>
-    <p id="resultado"></p>
-
-    <button onclick="guardarEnArchivoCSV()">Guardar en Archivo CSV</button>
-    <button onclick="recuperarDesdeCSV()">Recuperar Todos los Registros</button>
-    <button onclick="recuperarPorCI()">Recuperar por CI</button>
-
+    <!-- Inclusión del archivo de script -->
     <script src="script.js"></script>
 </body>
+
 </html>
